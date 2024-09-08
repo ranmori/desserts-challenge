@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Desserts Section -->
+        <div class="desserts">
+            <h1>Desserts</h1>
+            <div class="dessert-cards">
+                <!-- Dessert Card -->
+                <div class="dessert-card" data-price="7.00">
+                    <img src="https://plus.unsplash.com/premium_photo-1701013638755-3e0c99ef7f19?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8VmFuaWxsYSUyMEJlYW4lMjBDciVDMyVBOG1lJTIwQnIlQzMlQkJsJUMzJUE5ZXxlbnwwfHwwfHx8MA%3D%3D" alt="Vanilla Bean Crème Brûlée">
+                    <div class="quantity">
+                        <button aria-label="Decrease quantity" class="decreaseBtn" onclick="changeQuantity(this, -1)">-</button>
+                        <input type="text" class="quantity-input" value="0" aria-label="Product quantity" readonly>
+                        <button aria-label="Increase quantity" class="increaseBtn" onclick="changeQuantity(this, 1)">+</button>
+                    </div>
+                    <h2>Vanilla Bean Crème Brûlée</h2>
+                    <p>$</p>
+                    <button class="add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <!-- More cards here -->
+            </div>
+        </div>
+
+        <!-- Cart Section -->
+        <div class="cart">
+          <h2>Your Cart <span id="number">(0)</span></h2>
+            <ul class="cart-items"></ul>
+            <div class="cart-total">
+                <p>Order Total: <span>$0.00</span></p>
+              <img class="image" src=""/>
+                <button class="confirm-order" onclick="confirmOrder()">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Overlay -->
+    <div id="order-confirmation-overlay" class="order-confirmation-overlay" style="display: none;">
+        <div class="order-confirmation-container">
+            <div class="order-header">
+                <div class="confirmation-icon">✔️</div>
+                <h1>Order Confirmed</h1>
+                <p>We hope you enjoy your food!</p>
+            </div>
+            <div class="order-details"></div>
+            <div class="order-total">
+                <p>Order Total</p>
+                <p>$0.00</p>
+            </div>
+            <button class="new-order-button" onclick="closeOrderConfirmation()">Start New Order</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
